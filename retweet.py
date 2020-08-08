@@ -1,4 +1,5 @@
 import tweepy
+import schedule  
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -29,14 +30,8 @@ def main():
                 break
 main()
 
-"""
-import schedule  
-
-def job():  
-    print("A Simple Python Scheduler.")  
-
-# run the function job() every 30 minutes  
-schedule.every(30).minutes.do(job)  
+# run the function main() every 30 minutes  
+schedule.every(30).minutes.do(main)  
 
 while True:  
-    schedule.run_pending()  """
+    schedule.run_pending() 
