@@ -1,2 +1,0 @@
-# bothematician
-Twitter bot
