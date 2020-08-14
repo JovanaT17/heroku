@@ -30,8 +30,9 @@ def main():
                 break
 main()
 
+
 # run the function main() every 30 minutes  
 schedule.every(30).minutes.do(main)  
 
 while True:  
-    schedule.run_pending() 
+    schedule.run_pending()
