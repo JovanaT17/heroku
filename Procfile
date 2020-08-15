@@ -1,1 +1,1 @@
-worker: python retweet.py
+web: python retweet.py
