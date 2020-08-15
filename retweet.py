@@ -1,5 +1,5 @@
 import tweepy
-import schedule  
+import schedule
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -13,13 +13,14 @@ auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(auth)
 
+
 def main():
     search = ("#mathematician")
- 
+
     numberofTweets = 10
     for tweet in tweepy.Cursor(api.search, search).items(numberofTweets):
         if not tweet.retweeted or not tweet.favorited:
-            
+
             try:
                 tweet.favorite()
                 tweet.retweet()
@@ -31,8 +32,8 @@ def main():
 main()
 
 
-# run the function main() every 30 minutes  
-schedule.every(30).minutes.do(main)  
+# run the function main() every 30 minutes
+schedule.every(30).minutes.do(main)
 
-while True:  
+while True:
     schedule.run_pending()
